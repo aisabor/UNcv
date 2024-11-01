@@ -1,0 +1,305 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+img {
+    width: 25vh;
+    height: 25vh;
+    display: block;
+    margin: 20px auto;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #0b0e0b;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+input[type="file"],
+textarea,
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    height: 6vh;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Comments Section */
+.modal-comments {
+    margin-top: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for aesthetic */
+}
+
+.modal-comments .comment {
+    padding: 8px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    background: #e2e2e2;
+}
+
+/* Textarea for New Comment */
+textarea#newComment {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* CV Section */
+.cv-container {
+    padding: 20px;
+}
+
+.cv-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between items */
+    width: 100%;
+    max-width: 1200px; /* Max width for the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.cv-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.cv-item:hover {
+    transform: scale(1.02);
+}
+
+.cv-preview {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1; /* Maintain aspect ratio for preview */
+}
+
+.cv-item p {
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* View Button */
+.view-button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #0056b3;
+}
+
+/* CV Modal Styles */
+.cv-modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+/* CV iFrame for Enhanced Readability */
+.cv-iframe {
+    width: 100%;            /* Full width for easier reading on all screens */
+    height: 80vh;           /* Large height to display content without excessive scrolling */
+    border: none;           /* Remove borders for a clean look */
+    padding: 20px;          /* Padding inside iframe for comfortable reading */
+    background-color: #fff; /* White background for optimal contrast */
+    overflow-y: scroll;     /* Enable vertical scrolling if content overflows */
+    
+    /* Responsive Design */
+    max-width: 800px;       /* Limit width for readability, especially on large screens */
+    margin: 0 auto;         /* Center iframe within its container */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Light shadow for depth */
+    border-radius: 8px;     /* Rounded corners for a polished look */
+}
+
+/* Text Styles for Inside iFrame Content (Assuming iFrame's Document is Accessible) */
+.cv-iframe-content {
+    font-family: 'Georgia', serif; /* Use a serif font for better readability in lengthy text */
+    line-height: 1.6;              /* Increase line height for comfortable reading */
+    font-size: 16px;               /* Medium font size for clear visibility */
+    color: #333;                   /* Dark grey for easy contrast without harshness */
+    padding: 20px;                 /* Add padding for a more readable text margin */
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+    .cv-iframe {
+        height: 70vh;          /* Adjust height on smaller screens */
+        max-width: 100%;       /* Allow full screen width on mobile */
+        padding: 10px;         /* Reduce padding for smaller viewports */
+    }
+    .cv-iframe-content {
+        font-size: 14px;       /* Slightly smaller text for compact screens */
+        line-height: 1.5;      /* Adjust line height to fit mobile */
+    }
+}
+
+.cv-modal-content {
+    background-color: #9c2727;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Width of modal for better responsiveness */
+    max-width: 600px; /* Set a maximum width */
+    height: 140vh;
+}
+
+/* Close Button in Modal */
+.modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Comment Style in Modal */
+.modal-comments .comment {
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Like Section */
+.like-section {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly */
+    align-items: center; /* Center items vertically */
+    margin-top: 15px;
+}
+
+.like-button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.like-button:hover {
+    background-color: #0056b3;
+}
+
+.like-count {
+    font-size: 14px; /* Consistent font size */
+}
+#cvModal{
+    background-color: black;
+}
+.h1{
+    color: #9c2727;
+}
+h6{
+    color: #110a0a;
+
+    text-align: center;
+}
+
+#newComment{
+    width: 30vw;
+    height: 6vh;
+    align-items: center;
+    
+}
+footer{
+    background-color: #258325;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced CV Review</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Subscription Modal -->
+    <div id="subscriptionModal" class="modal">
+        <div class="modal-content">
+            <h2>Subscribe to Get Started</h2>
+            <form id="subscriptionForm">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="subscriptionMessage" class="message"></p>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <img src="/images/logo.jpeg" class="center" alt="Role">
+        <h1>UNFORTUNATE CV</h1>
+
+        <!-- Upload Section -->
+        <div id="uploadSection">
+            <h2>Upload Your CV for Review</h2>
+            <form id="cvForm">
+                <input type="file" id="cvFile" accept=".pdf,.doc,.docx,.txt" required>
+                <textarea id="description" placeholder="Describe your CV experience" required></textarea>
+                <button type="submit">Upload CV</button>
+            </form>
+            <h1 class="h1">WARNING!!!</h1>
+            <h6>PLEASE DO NOT UPDATE CV WITH PERSONAL DETAILS</h6>
+        </div>
+
+        <!-- Previously Uploaded CVs Section -->
+        <div class="cv-container">
+            <div id="cvList" class="cv-list"></div>
+        </div>
+        
+        <!-- Modal for displaying full CV -->
+        <div id="cvModal" class="cv-modal">
+            <div class="cv-modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <iframe id="fullCvIframe" class="cv-iframe">
+                    <!-- Assuming editable HTML content here -->
+                    <div class="cv-iframe-content">
+                        <!-- Content of the CV here -->
+                    </div>
+                </iframe>
+                <div id="modalComments" class="modal-comments"></div>
+                <div>
+                    <input type="text" id="newComment" placeholder="Add a comment...">
+                    <button onclick="addModalComment()">Submit</button>
+                </div>
+                <button onclick="likeCv()">Like</button>
+                <p id="likeCount"></p>
+                <button onclick="downloadCv()">Download CV</button>
+            </div>
+        </div>
+        
+   
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
